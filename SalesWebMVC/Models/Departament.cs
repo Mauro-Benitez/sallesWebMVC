@@ -12,6 +12,8 @@ namespace SalesWebMVC.Models
 
         public string Name { get; set; }
 
+        public Departament() { }
+
         public Departament(int id, string name)
         {
             Id = id;
