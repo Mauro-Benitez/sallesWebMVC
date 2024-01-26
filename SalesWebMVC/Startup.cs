@@ -38,7 +38,7 @@ namespace SalesWebMVC
 
             services.AddDbContext<SalesWebMVCContext>(options =>
                    options.UseSqlServer(Configuration.GetConnectionString("SalesWebMVCContext"), builder =>
-                        builder.MigrationsAssembly("SalesWebMvc")));
+                        builder.MigrationsAssembly("SalesWebMVC")));
         }
 
 
