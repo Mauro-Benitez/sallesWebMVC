@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SalesWebMVC.Models;
 using SalesWebMVC.Data;
-
+using SalesWebMVC.Services;
 namespace SalesWebMVC
 {
     public class Startup
@@ -42,6 +42,7 @@ namespace SalesWebMVC
                         builder.MigrationsAssembly("SalesWebMVC")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
 
 
         }
