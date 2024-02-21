@@ -9,8 +9,8 @@ using SalesWebMVC.Models;
 namespace SalesWebMVC.Migrations
 {
     [DbContext(typeof(SalesWebMVCContext))]
-    [Migration("20240214195153_InitialMysql")]
-    partial class InitialMysql
+    [Migration("20240221143002_migrationV1")]
+    partial class migrationV1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,7 +19,7 @@ namespace SalesWebMVC.Migrations
                 .HasAnnotation("ProductVersion", "2.1.14-servicing-32113")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("SalesWebMVC.Models.Departament", b =>
+            modelBuilder.Entity("SalesWebMVC.Models.Department", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -28,7 +28,7 @@ namespace SalesWebMVC.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Departament");
+                    b.ToTable("Department");
                 });
 
             modelBuilder.Entity("SalesWebMVC.Models.SalesRecord", b =>
@@ -82,7 +82,7 @@ namespace SalesWebMVC.Migrations
 
             modelBuilder.Entity("SalesWebMVC.Models.Seller", b =>
                 {
-                    b.HasOne("SalesWebMVC.Models.Departament", "Departament")
+                    b.HasOne("SalesWebMVC.Models.Department", "Departament")
                         .WithMany("Sellers")
                         .HasForeignKey("DepartamentId");
                 });
