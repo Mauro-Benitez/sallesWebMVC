@@ -6,7 +6,7 @@ namespace SalesWebMVC.Services
 {
     public class SellerService
     {
-
+        //banco de dados
         private readonly SalesWebMVCContext _context;
 
         public SellerService(SalesWebMVCContext context)
@@ -22,6 +22,7 @@ namespace SalesWebMVC.Services
 
         public void Insert(Seller obj)
         {
+            obj.Department = _context.Department.First();
             _context.Add(obj);
             _context.SaveChanges();
         }
