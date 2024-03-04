@@ -11,12 +11,17 @@ namespace SalesWebMVC.Models
 
         [Display(Name = "Nome")]
         public string Name { get; set; }
+
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [Display(Name = "Data de Nascimento")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString ="{0:dd/MM/yyyy}")]
         public DateTime BirthDate { get; set; }
 
         [Display(Name = "Salario Base")]
+        [DisplayFormat(DataFormatString ="{0:f2}")]
         public double BaseSalary { get; set; }
 
         [Display(Name = "Departamento")]
