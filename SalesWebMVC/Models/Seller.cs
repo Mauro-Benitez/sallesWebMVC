@@ -9,23 +9,43 @@ namespace SalesWebMVC.Models
     {
         public int Id { get; set; }
 
+
+
+
+        [Required(ErrorMessage = "o campo {0} é obrigatório")]
+        [StringLength(60, MinimumLength = 3, ErrorMessage = "{0} tem que ter entre {2} e {1} caracteres" )]
         [Display(Name = "Nome")]
         public string Name { get; set; }
 
+
+        [Required(ErrorMessage = "o campo {0} é obrigatório")]
+        [EmailAddress(ErrorMessage = "Adicione um email válido")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
+
+        [Required(ErrorMessage = "o campo {0} é obrigatório")]
         [Display(Name = "Data de Nascimento")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString ="{0:dd/MM/yyyy}")]
         public DateTime BirthDate { get; set; }
 
+
+        [Required(ErrorMessage = "o campo {0} é obrigatório")]
+        [Range(100.0, 50000.0,ErrorMessage ="{0} o valor tem que estar entre {1} e {2}")]
         [Display(Name = "Salario Base")]
         [DisplayFormat(DataFormatString ="{0:f2}")]
         public double BaseSalary { get; set; }
 
+
+
+        [Required(ErrorMessage = "o campo {0} é obrigatório")]
         [Display(Name = "Departamento")]
         public Department Department { get; set; }
+
+
+
+
         public int DepartmentId { get; set; }
         public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
 
