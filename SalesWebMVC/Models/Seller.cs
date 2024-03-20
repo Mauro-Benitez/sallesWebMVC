@@ -39,7 +39,7 @@ namespace SalesWebMVC.Models
 
 
 
-        [Required(ErrorMessage = "o campo {0} é obrigatório")]
+       
         [Display(Name = "Departamento")]
         public Department Department { get; set; }
 
